@@ -7,10 +7,7 @@ summary: Add or fix a Game Guide page in a few minutes, and see how it connects 
 Anyone can add to the Game Guide. A page is one plain text file, and you can write it entirely in your browser. You need a free GitHub account, and nothing installed.
 
 > [!IMPORTANT]
-> The project must be forked before you can contribute to the wiki.
-
-> [!IMPORTANT]
-> Fork from the [project’s own page](https://github.com/tau-samsara/udfop/fork) first. Don’t rely on “Edit this page”, because forking from there often fails.
+> The project must be forked before you can contribute to the wiki. Fork from the [project’s own page](https://github.com/tau-samsara/udfop/fork) first. Don’t rely on “Edit this page”, because forking from there often fails.
 
 ## The short version
 
@@ -618,7 +615,7 @@ The page's web address also includes its folders, such as `#/guide/combat/party-
 | `web/guide/combat/party-rest.md` | Combat | `../images/camp.png` |
 | `web/guide/combat/magic/party-rest.md` | Combat | `../../images/camp.png` |
 
-## Previewing on your computer (optional)
+## Previewing on your computer
 
 > [!NOTE]
 > You do not need this to contribute.
