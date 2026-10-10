@@ -6,7 +6,11 @@ summary: Add or fix a Game Guide page in a few minutes, and see how it connects 
 
 Anyone can add to the Game Guide. A page is one plain text file, and you can write it entirely in your browser. You need a free GitHub account, and nothing installed.
 
-**You must fork the project first.** Only the maintainers can change the project directly. Everyone else works in their own copy of it, called a *fork*, and then asks for their change to be added. **Make the fork from the project's own page on GitHub, before you write anything.** Do not rely on the site's "Edit this page" link or the red links to missing pages to create it for you: they open GitHub's editor, and forking from there can fail.
+> [!IMPORTANT]
+> The project must be forked before you can contribute to the wiki.
+
+> [!IMPORTANT]
+> Fork from the [project’s own page](https://github.com/tau-samsara/udfop/fork) first. Don’t rely on “Edit this page”, because forking from there often fails.
 
 ## The short version
 
@@ -17,6 +21,9 @@ Anyone can add to the Game Guide. A page is one plain text file, and you can wri
 5. **Save it.** Click **Commit changes**. Choose **Create a new branch for this commit and start a pull request**, then click **Propose new file**.
 6. **Create the pull request.** GitHub shows a comparison of your change. Click **Create pull request**, then click **Create pull request** once more on the next screen. This is the step people most often miss: until you do it, nobody has been told about your page.
 7. **Wait for review.** A maintainer reads it and may ask for changes, which you make on the same pull request. Once it is merged, the page appears on the site within a few minutes. You do not need to edit any menu or list: the site builds those from the page files.
+
+> [!IMPORTANT]
+> Creating the pull request is the step people miss. Until you do it, nobody knows about your page. The box would go after the numbered list, since a list step can’t hold one.
 
 To fix an existing page, fork the project as above, open the page's file in your copy under `web/guide`, click the pencil icon to edit it, and finish with the same commit and pull request steps. If you forked a while ago, press **Sync fork** on your copy's main page first, so you are editing the latest version.
 
@@ -332,7 +339,9 @@ Rendered:
 - Name it after your page, such as `party-rest-camp.png`, so names do not clash and people can tell what it belongs to.
 - Use PNG, JPG, WebP or GIF, and keep each file under about 500 KB. Crop or shrink large screenshots.
 - Always write alt text (the words in the square brackets) describing what the picture shows. It is read aloud by screen readers and shown if the picture cannot load.
-- Only upload pictures you made yourself, such as your own screenshots or diagrams. Do not upload other people's artwork or images taken from other sites.
+
+> [!important]
+> Only upload pictures you made yourself, such as your own screenshots or diagrams. Do not upload other people's artwork or images taken from other sites.
 
 ## Extended features
 
@@ -520,7 +529,7 @@ Raw HTML (it is shown as plain text, which keeps pages safe and consistent), str
 - Write what you know to be true and say where it comes from, such as testing in the game, a patch number or a developer post.
 - One subject per page. Link to other pages instead of repeating them.
 - The Patch Notes already record *what changed*. A guide page should say *how it works now*, and can link to the topic for the history, for example [[topic:Revenants]].
-- Use your own words. Do not paste the developers' release text or copy other sites.
+- Use your own words.
 - Your writing is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and credited to "UDFOP contributors".
 
 ## Checking your page
@@ -535,9 +544,36 @@ Once your page is live, look for these:
 
 ## Review and credit
 
-- Every new or edited page is reviewed by a maintainer before it goes live. Mistakes are fixed the same way, by another edit.
-- Files and folders whose names start with `_` are ignored by the site (the starter template, `_template.md`, is one).
-- Folders are optional. A page inside `web/guide/combat/` gets the category "Combat" unless it sets its own. Its pictures are still kept in `web/guide/images/`, so link them as `../images/name.png`.
+### Review
+
+A maintainer reads every new or edited page before it goes live, and may ask for changes. You make those on the same pull request (step 7 of the short version). Once it is merged, the page appears on the site within a few minutes.
+
+If a mistake is found after a page is live, it is fixed the same way: someone edits the page and sends another pull request. Nothing has to be undone first.
+
+### Credit
+
+Your writing is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and credited to "UDFOP contributors". GitHub also keeps your name beside every change you make, in the project's history.
+
+### Files the site ignores
+
+A file or folder whose name starts with `_` or `.` is not part of the site, so the Game Guide never lists it. The starter template, `_template.md`, is one.
+
+You can use this to keep an unfinished page out of the site. Name it with a leading underscore, such as `_party-rest.md`, and remove the underscore when it is ready. This only hides the page from the site. The file is still visible in the project on GitHub, so do not put anything private in it.
+
+### Using folders
+
+Folders are optional, and most pages sit directly in `web/guide/`. If you put a page in a folder, the folder changes two things:
+
+- **The category.** The page's category is the name of its first folder, unless the page sets its own `category` line, which always wins. Only the first folder counts.
+- **The picture path.** Pictures always stay in the one folder, `web/guide/images/`. A picture path is read from the folder the page is in, so the page has to climb out of its folder first, once for each folder it is inside.
+
+The page's web address also includes its folders, such as `#/guide/combat/party-rest`. Links written with its title, `[[Party rest]]`, work the same wherever the file is.
+
+| The page file | Its category (if it sets none) | A picture named `camp.png` is written as |
+|---|---|---|
+| `web/guide/party-rest.md` | General | `images/camp.png` |
+| `web/guide/combat/party-rest.md` | Combat | `../images/camp.png` |
+| `web/guide/combat/magic/party-rest.md` | Combat | `../../images/camp.png` |
 
 ## Previewing on your computer (optional)
 
