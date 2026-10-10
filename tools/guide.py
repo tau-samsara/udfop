@@ -41,6 +41,7 @@ def plain(md):
     t = re.sub(r'\[!(?:NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]', ' ', t, flags=re.I)
     t = re.sub(r'\{\{(?:pad\s*:\s*)?([^{}]+)\}\}', r'\1', t)
     t = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', t)
+    t = re.sub(r'>!|!<', ' ', t)
     t = re.sub(r'[#>*_`|~-]+', ' ', t)
     return re.sub(r'\s+', ' ', t).strip()
 
@@ -70,6 +71,8 @@ def scan():
                 title = m.group(1) if m else humanize(os.path.basename(slug))
                 problems.append(('warn', rel, 'no title in the front matter; using "%s"' % title))
             folder = os.path.dirname(slug)
+            if folder.split('/')[0].lower() == 'category':
+                problems.append(('error', rel, 'a top-level folder named "category" cannot be used: the site reserves that word in addresses (#/guide/category/...), so every page in it would be unreachable. Rename the folder'))
             category = meta.get('category') or (humanize(folder.split('/')[0]) if folder else 'General')
             if re.search(r'<\s*/?\s*(script|iframe|object|embed|style|img|a)\b|javascript:|\bon[a-z]+\s*=|[\x00-\x08\x0b\x0c\x0e-\x1f]', body, flags=re.I):
                 problems.append(('warn', rel, 'contains HTML tags, script-like text or control characters: the site shows these as plain text, but a reviewer should look'))
@@ -105,7 +108,7 @@ def check_images(pages, problems):
             rel = os.path.normpath(os.path.join(folder, ref.lstrip('./') if ref.startswith('./') else ref)).replace(os.sep, '/')
             used.add(rel.lower())
             if not os.path.isfile(os.path.join(ROOT, rel)):
-                problems.append(('error', p['slug'] + '.md', 'the picture "%s" does not exist (upload it to web/guide/images/ and use that path)' % ref))
+                problems.append(('error', p['slug'] + '.md', 'the picture "%s" does not exist (put it in an images folder, such as web/guide/images/ or one beside the page, and use the path from the page folder)' % ref))
     for p in pages:
         body = re.sub(r'```.*?```', ' ', p['_body'], flags=re.S)
         for m in FIGURE.finditer(body):
@@ -131,8 +134,8 @@ def check_images(pages, problems):
                 problems.append(('warn', rel, 'is %d KB; please shrink it below %d KB so pages load quickly' % (os.path.getsize(path) // 1024, MAX_IMG // 1024)))
             if rel.lower() not in used:
                 problems.append(('warn', rel, 'is not used by any page'))
-            if os.path.dirname(rel) != 'images':
-                problems.append(('warn', rel, 'pictures are easier to find in web/guide/images/'))
+            if os.path.basename(os.path.dirname(rel)) != 'images':
+                problems.append(('warn', rel, 'pictures are easier to find in an images folder (web/guide/images/, or an images folder inside the page folder)'))
 
 
 def code_languages():

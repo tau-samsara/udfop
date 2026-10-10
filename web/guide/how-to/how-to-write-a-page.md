@@ -131,7 +131,7 @@ Rendered: the headings you are reading on this page are made this way, such as "
 
 Put `**` around text for bold, and `*` or `_` around it for italic.
 
-```
+```markdown
 This is **bold**, this is *italic*, and this is _also italic_.
 ```
 
@@ -352,8 +352,8 @@ Rendered:
 
 ## Adding pictures
 
-- Upload pictures to the **`web/guide/images/`** folder. In your fork, switch to the branch GitHub made for your page (the branch menu at the top left of the file list), open `web/guide/images/`, and choose **Add file → Upload files**. The picture joins your open pull request automatically.
-- Reference a picture by its path, which starts with `images/` for a page directly in `web/guide/`. If your page is inside a folder such as `web/guide/combat/`, start with `../images/` instead, because paths are referenced from the page's own folder.
+- Upload pictures to an **`images`** folder. Most pages use the shared one, **`web/guide/images/`**. A page that lives in its own folder may instead keep an `images` folder beside it, as this page does. In your fork, switch to the branch GitHub made for your page (the branch menu at the top left of the file list), open the folder, and choose **Add file → Upload files**. The picture joins your open pull request automatically.
+- Reference a picture by its path from the page's own folder. For a page directly in `web/guide/`, that starts with `images/`. For a page inside a folder such as `web/guide/combat/`, use `../images/` to reach the shared folder, or `images/` to reach one beside the page.
 - Write the picture into your page as shown above. The sample picture belongs to this page, so yours will have its own name.
 - Name it after your page, such as `party-rest-camp.png`, so names do not clash and people can tell what it belongs to.
 - Use PNG, JPG, WebP or GIF, and keep each file under about 500 KB. Crop or shrink large screenshots.
@@ -514,6 +514,23 @@ Anything you can write in a page also works inside a box: several paragraphs, li
 
 A tag the site does not know, such as `[!DANGER]`, leaves an ordinary quotation, and the page check mentions it. When you edit on GitHub, its preview draws these boxes too, in its own colours.
 
+### Spoilers
+
+To hide a few words until the reader chooses to see them, put `>!` before them and `!<` after them.
+
+```markdown
+The final boss is >!the Lich King, who is weak to fire!<, so bring fire spells.
+```
+
+Rendered:
+
+The final boss is >!the Lich King, who is weak to fire!<, so bring fire spells.
+
+The words are masked by a dark bar. Clicking them, or pressing {{Enter}} or {{Space}} while they are selected, shows them, and the same action hides them again. Bold, italic, links and keys work inside a spoiler, and a link inside one does nothing until it has been revealed.
+
+> [!NOTE]
+> A spoiler hides words from the eye, not from the page. The text is still in the file on GitHub, and a reader can still select it and copy it. Use it for surprises in the game, never for anything private. A spoiler must sit on one line, and a line that starts with `>!` is treated as a paragraph, not a quotation.
+
 ### Keys and buttons
 
 To show a keyboard key, a mouse button or a gamepad button, put its name between double braces. It is drawn as a small keycap, so readers can see at a glance what to press.
@@ -602,20 +619,34 @@ A file or folder whose name starts with `_` or `.` is not part of the site, so t
 
 You can use this to keep an unfinished page out of the site. Name it with a leading underscore, such as `_party-rest.md`, and remove the underscore when it is ready. This only hides the page from the site. The file is still visible in the project on GitHub, so do not put anything private in it.
 
-### Using folders
+### Folders and file names
 
-Folders are optional, and most pages sit directly in `web/guide/`. If you put a page in a folder, the folder changes two things:
+Folders are optional, and most pages sit directly in `web/guide/`. A page's address is its path inside `web/guide/` without `.md`, so `web/guide/combat/party-rest.md` is opened at `#/guide/combat/party-rest`. Addresses ignore capital letters, and a page can also be opened by its title.
 
-- **The category.** The page's category is the name of its first folder, unless the page sets its own `category` line, which always wins. Only the first folder counts.
-- **The picture path.** Keep pictures in one folder, `web/guide/images/`. A picture kept elsewhere still works, but the page check notes it. A picture path starts from the folder the page is in, so the page has to climb out of its folder first, once for each folder it is inside.
+**What a folder changes**
 
-The page's web address also includes its folders, such as `#/guide/combat/party-rest`. Links written with its title, `[[Party rest]]`, work the same wherever the file is.
+- **The category.** The page's category is the name of its first folder, with hyphens shown as spaces and the first letter capitalised, unless the page sets its own `category` line, which always wins. Only the first folder counts, so deeper folders only organise the files.
+- **The address.** The folder is part of the address. Moving a page to another folder changes its address and breaks every plain link to the old one. Links written with the title, `[[Party rest]]`, keep working wherever the file is, so prefer those.
+- **The picture path.** A picture path starts from the folder the page is in. See the table below.
 
-| The page file | Its category (if it sets none) | A picture named `camp.png` is written as |
+**What stays the same**
+
+- Titles are unique across all folders, not per folder. Two pages with the same title are an error, even in different folders.
+- Folder names may contain spaces and capital letters, but plain lowercase names with hyphens are easiest to link to.
+
+> [!WARNING]
+> Do not name a top-level folder `category`. The site uses that word in its own addresses (`#/guide/category/Combat`), so every page inside such a folder would be unreachable. The page check reports this as an error.
+
+> [!NOTE]
+> The "create it" link on a missing page always makes a new file directly in `web/guide/`. If the page belongs in a folder, move the file after creating it, or type the folder into the file name on GitHub's page, such as `combat/party-rest.md`.
+
+| The page file | Its category (if it sets none) | A shared picture named `camp.png` is written as |
 |---|---|---|
 | `web/guide/party-rest.md` | General | `images/camp.png` |
 | `web/guide/combat/party-rest.md` | Combat | `../images/camp.png` |
 | `web/guide/combat/magic/party-rest.md` | Combat | `../../images/camp.png` |
+
+A picture kept in an `images` folder beside the page, such as `web/guide/combat/images/camp.png`, is written `images/camp.png` from that page.
 
 ## Previewing on your computer
 

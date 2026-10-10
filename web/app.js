@@ -323,18 +323,14 @@
     else {
       h = '<p>Results for <b>' + esc(q) + "</b>: " + plural(gp.length, "guide page") + ", " + plural(tm.length, "matching topic") + " and " + plural(hit.length, "matching change") + ".</p>";
       if (gp.length) {
-        h += sec("Game Guide", "Game Guide", 2) + guideCards(gp.slice(0, SEARCH_SHOWN));
-        if (gp.length > SEARCH_SHOWN) h += '<div id="gp-rest" hidden>' + guideCards(gp.slice(SEARCH_SHOWN)) + '</div><p><button type="button" class="more" id="gp-more">Show the other ' + (gp.length - SEARCH_SHOWN) + " guide pages</button></p>";
+        h += sec("Game Guide", "Game Guide", 2) + shownThenMore(gp, SEARCH_SHOWN, guideList, "guide pages", "gp-rest");
       }
       if (tm.length === 1 && tm[0].toLowerCase() === q.toLowerCase()) h = '<div class="mbox">There is a topic named “' + tlink(tm[0]) + "”.</div>" + h;
-      if (tm.length) h += sec("Topics", "Topics", 2) + topicList(tm.slice(0, 80));
+      if (tm.length) h += sec("Topics", "Topics", 2) + shownThenMore(tm, TOPICS_SHOWN, topicList, "topics", "tm-rest");
       if (hit.length) h += sec("Changes", "Changes", 2) + table(hit, ["Patch", "Topic", "Type", "Change"], 100);
       if (!tm.length && !hit.length && !gp.length) h += "<p>No results. Try fewer or different words.</p>";
     }
-    return { title: "Search: " + q, html: page("Search", h), after: function () {
-      var b = document.getElementById("gp-more");
-      if (b) b.addEventListener("click", function () { document.getElementById("gp-rest").hidden = false; b.parentNode.remove(); });
-    } };
+    return { title: "Search: " + q, html: page("Search", h), after: revealMore };
   };
 
   views.about = function () {
@@ -390,11 +386,22 @@
       return "<section><h3>" + esc(ch) + "</h3><ul>" + letters[ch].map(li).join("") + "</ul></section>";
     }).join("") + "</div>";
   }
-  var INDEX_SHOWN = 6, SEARCH_SHOWN = 20;   /* guide pages listed per category on the index, and per first screen of search results */
-  function guideCards(list) {
-    return '<ul class="gcards">' + list.map(function (p) {
-      return "<li>" + glink(p) + (p.summary ? '<span class="gsum">' + esc(p.summary) + "</span>" : "") + "</li>";
+  var INDEX_SHOWN = 12, SEARCH_SHOWN = 40, TOPICS_SHOWN = 80;   /* guide pages listed per category on the index; first screen of guide results and of topic results in a search */
+  /* titles only, in columns; hovering a link shows the page's summary (the same list the category pages use) */
+  function guideList(list) {
+    return '<ul class="cols">' + list.map(function (p) {
+      return "<li>" + glink(p).replace("<a ", p.summary ? '<a title="' + esc(p.summary) + '" ' : "<a ") + "</li>";
     }).join("") + "</ul>";
+  }
+  /* the first part of a long list, with a button that reveals the rest (wired up by revealMore) */
+  function shownThenMore(list, shown, render, noun, id) {
+    if (list.length <= shown) return render(list);
+    return render(list.slice(0, shown)) + '<div id="' + id + '" hidden>' + render(list.slice(shown)) + '</div><p><button type="button" class="more" data-more="' + id + '">Show the other ' + (list.length - shown) + " " + noun + "</button></p>";
+  }
+  function revealMore() {
+    Array.prototype.forEach.call(document.querySelectorAll("button[data-more]"), function (b) {
+      b.addEventListener("click", function () { document.getElementById(b.getAttribute("data-more")).hidden = false; b.parentNode.remove(); });
+    });
   }
   /* The editor's starter text is web/guide/_template.md (the one template); this is only a fallback if it cannot be fetched. */
   var FALLBACK_TPL = "---\ntitle: Page title\ncategory: \nsummary: \n---\n\nWrite your page here.\n";
@@ -511,6 +518,8 @@
       if (ext) noteRef("ext", url, { url: url, text: plainText(text) });
       return keep('<a href="' + esc(url) + '"' + (ext ? ' rel="noopener"' : "") + ">" + inlineBasic(text) + "</a>" + (ext ? MARK_EXT : ""));
     });
+    /* a spoiler: >!hidden text!< is masked until clicked (or Enter or Space pressed on it) */
+    s = s.replace(/>!(.+?)!</g, function (m, t) { return keep('<span class="spoiler" role="button" tabindex="0" aria-expanded="false" title="Spoiler: click to show">') + t + keep("</span>"); });
     s = inlineBasic(s);
     return s.replace(/\u0000(\d+)\u0000/g, function (m, i) { return stash[+i]; });
   }
@@ -518,7 +527,7 @@
     return esc(s).replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>").replace(/(^|[\s(])\*([^*\s][^*]*)\*/g, "$1<i>$2</i>")
       .replace(/(^|[\s(])_([^_\s][^_]*)_(?=[\s).,;:!?]|$)/g, "$1<i>$2</i>");
   }
-  function plainText(s) { return s.replace(/\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g, function (m, t, l) { return l || t; }).replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/[*_`]/g, ""); }
+  function plainText(s) { return s.replace(/\[\[([^\]|]+)(?:\|([^\]]*))?\]\]/g, function (m, t, l) { return l || t; }).replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/>!(.+?)!</g, "$1").replace(/[*_`]/g, ""); }
   function splitRow(l) {
     var cells = [], cur = "", t = l.trim().replace(/^\|/, "").replace(/([^\\])\|$/, "$1");
     for (var k = 0; k < t.length; k++) {
@@ -580,9 +589,9 @@
       }
       first = false;
       if (/^\s*([-*_])\s*(\1\s*){2,}$/.test(l)) { out.push("<hr>"); i++; continue; }
-      if (/^>/.test(l)) {
+      if (/^>(?!!.*!<)/.test(l)) {   /* a line that opens with a >!spoiler!< is a paragraph, not a quote */
         var q = [];
-        while (i < lines.length && /^>/.test(lines[i])) q.push(lines[i++].replace(/^>\s?/, ""));
+        while (i < lines.length && /^>(?!!.*!<)/.test(lines[i])) q.push(lines[i++].replace(/^>\s?/, ""));
         /* a quote whose first line is [!NOTE], [!TIP], [!IMPORTANT], [!WARNING] or [!CAUTION] is a notice box (GitHub's alert syntax); any other quote stays a quote */
         var al = /^\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/i.exec(q[0]);
         if (al) {
@@ -660,7 +669,7 @@
       var cats = guideCategories();
       Object.keys(cats).forEach(function (c) {
         var all = cats[c];
-        h += sec(c, c, 2).replace(">" + esc(c) + "</h2>", '><a href="#/guide/category/' + enc(c) + '">' + esc(c) + "</a></h2>") + guideCards(all.slice(0, INDEX_SHOWN));   /* the section name opens that category's page */
+        h += sec(c, c, 2).replace(">" + esc(c) + "</h2>", '><a href="#/guide/category/' + enc(c) + '">' + esc(c) + "</a></h2>") + guideList(all.slice(0, INDEX_SHOWN));   /* the section name opens that category's page */
         if (all.length > INDEX_SHOWN) h += '<p class="allpages"><a href="#/guide/category/' + enc(c) + '">All ' + all.length + " pages in " + esc(c) + " →</a></p>";
       });
     }
@@ -882,6 +891,19 @@
       var k = d.getAttribute("data-dock");
       updateSetting(k, loadSettings()[k] === "sidebar" ? "popover" : "sidebar"); setMenu(false); setToc(false); settingsPanel.close(false);
     }
+  });
+
+  /* spoilers: show or hide the masked text */
+  function toggleSpoiler(el) { var on = !el.classList.contains("shown"); el.classList.toggle("shown", on); el.setAttribute("aria-expanded", on ? "true" : "false"); el.title = on ? "Click to hide again" : "Spoiler: click to show"; }
+  document.addEventListener("click", function (e) {
+    var sp = e.target.closest && e.target.closest(".spoiler");
+    if (!sp) return;
+    if (!sp.classList.contains("shown")) e.preventDefault();   /* the first click only reveals; it does not follow a link inside */
+    toggleSpoiler(sp);
+  });
+  document.addEventListener("keydown", function (e) {
+    var sp = e.target.classList && e.target.classList.contains("spoiler") ? e.target : null;
+    if (sp && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleSpoiler(sp); }
   });
 
   /* the Copy button on code blocks */

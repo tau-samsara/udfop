@@ -319,6 +319,16 @@ a.missing, a.missing:visited { color: var(--nerf); }
 .codebox { margin: 0 0 1em; border: 1px solid var(--line); background: var(--softer); }
 .codebar { display: flex; align-items: center; justify-content: space-between; min-height: 1.9em; padding: 0 6px 0 12px; border-bottom: 1px solid var(--line); background: var(--soft); }
 .codelang { font: 700 .68rem var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+/* a spoiler: >!text!< hides the words behind a solid bar until clicked */
+.spoiler { cursor: pointer; border-radius: 3px; background: var(--fg); color: transparent; }
+.spoiler * { color: transparent !important; }
+.spoiler a { pointer-events: none; }
+.spoiler img { visibility: hidden; }
+.spoiler:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
+.spoiler.shown { background: var(--soft); color: inherit; }
+.spoiler.shown * { color: revert !important; }
+.spoiler.shown a { pointer-events: auto; }
+.spoiler.shown img { visibility: visible; }
 .codecopy { margin: 2px 0; padding: 1px 9px; border: 1px solid var(--line); border-radius: 3px; background: var(--softer); color: var(--fg); font: inherit; font-size: .75rem; cursor: pointer; }
 .codecopy:hover { background: color-mix(in srgb, var(--accent) 22%, var(--soft)); border-color: var(--accent); }
 .codecopy:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
@@ -334,10 +344,6 @@ a.missing, a.missing:visited { color: var(--nerf); }
 #app img { max-width: 100%; height: auto; }
 
 /* Game Guide page lists: one card per page, reflowing with the width */
-.gcards { list-style: none; margin: .4em 0 1.2em; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 10px; }
-.gcards li { display: flex; flex-direction: column; gap: 3px; margin: 0; padding: 8px 12px; border: 1px solid var(--line); background: var(--softer); }
-.gcards li > a { font-weight: 700; }
-.gcards .gsum { font-size: .85rem; color: var(--muted); }
 .allpages { margin: -.4em 0 1.2em; font-size: .9rem; }
 
 /* category page: Wikipedia-style lettered columns */
@@ -420,7 +426,7 @@ html:not([data-contents="sidebar"]) body.toc-open #side-toc:not([hidden]) { disp
 /* keys and buttons: {{W}}, {{Shift+Right click}}, {{Mouse 4}}, {{pad:RT}} */
 kbd.k { display: inline-block; min-width: 1.5em; padding: 0 .5em; margin: 0 1px; text-align: center; white-space: nowrap; line-height: 1.5;
   font: 600 .82em/1.5 ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace; color: var(--fg); background: var(--softer);
-  border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; vertical-align: baseline; }
+  border: 1px solid var(--muted); border-bottom-width: 2px; border-radius: 4px; vertical-align: baseline; }   /* the edge uses the muted text color so it reads at 3:1 or better (the dark themes set their own below) */
 kbd.k-mouse { border-radius: 10px; }
 kbd.k-pad { border-radius: 999px; border-color: var(--accent); }
 .kplus { margin: 0 2px; color: var(--muted); }
