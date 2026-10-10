@@ -511,7 +511,7 @@ Rendered, one of each:
 > [!CAUTION]
 > Deleting a save in the `saves` folder cannot be undone.
 
-Anything you can write in a page also works inside a box: several paragraphs, lists, links, keys and code boxes. Put `>` at the start of every line of the box, including blank lines between paragraphs. Keep each box short, and use them sparingly, since a page full of boxes stops anything standing out.
+Anything you can write in a page also works inside a box: several paragraphs, lists, links, keys and code boxes. Put `>` at the start of every line of the box, including blank lines between paragraphs. Keep each box short. On a normal guide page use them sparingly, since a page full of boxes stops anything standing out. This page uses many because each one is something a new contributor must not miss.
 
 A tag the site does not know, such as `[!DANGER]`, leaves an ordinary quotation, and the page check mentions it. When you edit on GitHub, its preview draws these boxes too, in its own colours.
 
