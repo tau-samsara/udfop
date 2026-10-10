@@ -1,0 +1,13 @@
+# Contributors
+
+Thank you to everyone who has written, fixed or reviewed something in UDFOP. Guide pages are credited collectively to "UDFOP contributors" under [CC BY 4.0](LICENSE-CONTENT.md); this list names the people behind them.
+
+A name is added only with the person's agreement, and only as a GitHub username (no email addresses or real names unless the person asks). To be added, or removed, open an issue or say so in your pull request.
+
+## Maintainer
+
+- [tau-samsara](https://github.com/tau-samsara)
+
+## Contributors
+
+*Add one line per person: GitHub username, then a few words on what they worked on.*

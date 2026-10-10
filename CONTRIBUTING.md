@@ -28,3 +28,7 @@ A maintainer reviews every pull request. A check (`python tools/guide.py --check
 ## Corrections to the Patch Notes
 
 See the README: the usual fixes are editing a description in `data/descriptions/`, a row in `data/normalized/all.jsonl`, or a category in `data/hub_assignment.csv`. New patches are added by a maintainer with the release script.
+
+## Credit
+
+Contributors who agree to it are listed by GitHub username in [CONTRIBUTORS.md](CONTRIBUTORS.md).
