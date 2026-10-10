@@ -23,7 +23,7 @@ Anyone can add to the Game Guide. A page is one plain text file, and you can wri
 7. **Wait for review.** A maintainer reads it and may ask for changes, which you make on the same pull request. Once it is merged, the page appears on the site within a few minutes. You do not need to edit any menu or list: the site builds those from the page files.
 
 > [!IMPORTANT]
-> Creating the pull request is the step people miss. Until you do it, nobody knows about your page. The box would go after the numbered list, since a list step can’t hold one.
+> Creating the pull request is the step people miss. Until you do it, nobody knows about your page.
 
 To fix an existing page, fork the project as above, open the page's file in your copy under `web/guide`, click the pencil icon to edit it, and finish with the same commit and pull request steps. If you forked a while ago, press **Sync fork** on your copy's main page first, so you are editing the latest version.
 
@@ -338,7 +338,7 @@ Rendered:
 ## Adding pictures
 
 - Upload pictures to the **`web/guide/images/`** folder. In your fork, switch to the branch GitHub made for your page (the branch menu at the top left of the file list), open `web/guide/images/`, and choose **Add file → Upload files**. The picture joins your open pull request automatically.
-- Reference a picture by its path, always starting with `images/`. If your page is inside a folder such as `web/guide/combat/`, start with `../images/` instead, because paths are referenced from the page's own folder.
+- Reference a picture by its path, which starts with `images/` for a page directly in `web/guide/`. If your page is inside a folder such as `web/guide/combat/`, start with `../images/` instead, because paths are referenced from the page's own folder.
 - Write the picture into your page as shown above. The sample picture belongs to this page, so yours will have its own name.
 - Name it after your page, such as `party-rest-camp.png`, so names do not clash and people can tell what it belongs to.
 - Use PNG, JPG, WebP or GIF, and keep each file under about 500 KB. Crop or shrink large screenshots.
@@ -537,9 +537,8 @@ Raw HTML (it is shown as plain text, which keeps pages safe and consistent), str
 > [!IMPORTANT]
 > **Only submit what is yours, and credit what is not.**
 >
-> - Use your own words. Do not paste the developers' release text or copy other sites.
-> - A short quotation is fine when you set it off as a quotation and say who said it and where, such as a developer post with its link.
-> - Only upload pictures you made yourself. The other rules on what you may submit are under **Good practice** below.
+> - **Use sources, not their words.** Release notes, developer posts and other sites are good sources, but put what they say in your own words and say where it came from. Quote only short passages, set off as quotations, with who said it and where.
+> - **Only upload pictures you made yourself.** The rule is repeated under **Adding pictures** above.
 >
 > Your writing is released under a free licence, as explained under **Credit** below.
 
@@ -576,7 +575,7 @@ You can use this to keep an unfinished page out of the site. Name it with a lead
 Folders are optional, and most pages sit directly in `web/guide/`. If you put a page in a folder, the folder changes two things:
 
 - **The category.** The page's category is the name of its first folder, unless the page sets its own `category` line, which always wins. Only the first folder counts.
-- **The picture path.** Pictures always stay in the one folder, `web/guide/images/`. A picture path is read from the folder the page is in, so the page has to climb out of its folder first, once for each folder it is inside.
+- **The picture path.** Keep pictures in one folder, `web/guide/images/`. A picture kept elsewhere still works, but the page check notes it. A picture path starts from the folder the page is in, so the page has to climb out of its folder first, once for each folder it is inside.
 
 The page's web address also includes its folders, such as `#/guide/combat/party-rest`. Links written with its title, `[[Party rest]]`, work the same wherever the file is.
 
