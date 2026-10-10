@@ -2,6 +2,7 @@
 title: How to write a guide page
 category: Contributing
 summary: Add or fix a Game Guide page in a few minutes, and see how it connects to the rest of the site.
+unlisted: yes
 ---
 
 Anyone can add to the Game Guide. A page is one plain text file, and you can write it entirely in your browser. You need a free GitHub account, and nothing installed.
@@ -57,6 +58,7 @@ Here is where each part shows up on the site:
 |---|---|
 | `title` | The page heading and the browser tab. It is also the name other pages use to link to this one: `[[Party rest]]`. Titles must be unique, and link matching is case-insensitive, so `[[how to write a guide page]]` works too. |
 | `category` (Optional) | Puts the page in a group. The group appears on the **Game Guide** page, as its own page listing, and in the breadcrumb at the top of the page. |
+| `unlisted` (Optional) | Written `unlisted: yes`. Keeps the page out of the **Game Guide** page and the category pages, and out of the page counts. The page can still be opened by its address, by a link and by search. It is for pages about the project itself, such as this one. |
 | `summary` (Optional) | The one-line description shown next to the page's name in lists and in search results. |
 | `related` (Optional) | Pages and topics to list in the References section even though the text does not link them. In the example it adds the Patch Notes topic Resting and the guide page Camping. See "The References section" below. |
 | `## Heading` lines (Optional) | Section headings. Every heading is listed in the page's **Contents** list, which is added automatically, like the one beside this page (in the left sidebar, or behind the ☰ button next to the title). The page title is added for you, so do not repeat it. |

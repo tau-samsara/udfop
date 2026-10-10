@@ -77,7 +77,8 @@ def scan():
                 problems.append(('error', rel, 'the page is empty'))
             if re.search(r'[^A-Za-z0-9._/ -]', slug):
                 problems.append(('warn', rel, 'file names are easier to link with only letters, numbers, spaces and hyphens'))
-            pages.append(dict(slug=slug, title=title, category=category, summary=meta.get('summary', ''),
+            unlisted = meta.get('unlisted', '').strip().lower() in ('yes', 'true', '1', 'on')
+            pages.append(dict(slug=slug, title=title, category=category, summary=meta.get('summary', ''), unlisted=unlisted,
                               text=plain(body)[:6000], _body=body,
                               _related=[x.strip() for x in meta.get('related', '').split(',') if x.strip()]))
     return pages, problems
@@ -213,7 +214,7 @@ def main():
             if not ok:
                 problems.append(('warn', p['slug'] + '.md', 'related: "%s" matches no %s' % (name, {'patch': 'patch', 'guide': 'guide page', 'topic': 'topic'}.get(kind, 'guide page or topic'))))
     pages.sort(key=lambda p: (p['category'].lower(), p['title'].lower()))
-    out = [{k: v for k, v in p.items() if not k.startswith('_')} for p in pages]
+    out = [{k: v for k, v in p.items() if not k.startswith('_') and not (k == 'unlisted' and not v)} for p in pages]
     with open(os.path.join(ROOT, 'index.json'), 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, separators=(',', ':'))
     print('guide: %d page(s) indexed' % len(out))

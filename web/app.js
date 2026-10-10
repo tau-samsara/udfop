@@ -363,9 +363,11 @@
     guide = list || []; guideBySlug = {}; guideByTitle = {};
     guide.forEach(function (p) { guideBySlug[p.slug.toLowerCase()] = p; guideByTitle[p.title.toLowerCase()] = p; });
   }
+  /* pages with "unlisted: yes" in their front matter are left out of the Game Guide page, the category pages and the counts. They can still be opened by address, by a link and by search */
+  function listedGuide() { return (guide || []).filter(function (p) { return !p.unlisted; }); }
   function guideCategories() {
     var m = {};
-    (guide || []).forEach(function (p) { (m[p.category] = m[p.category] || []).push(p); });
+    listedGuide().forEach(function (p) { (m[p.category] = m[p.category] || []).push(p); });
     return m;
   }
   function glink(p) { return '<a href="#/guide/' + p.slug.split("/").map(enc).join("/") + '">' + esc(p.title) + "</a>"; }
@@ -650,7 +652,7 @@
     var h = "<p>The Game Guide is the community-written part of UDFOP: how things in Daggerfall Online work, written by players. Unlike the patch notes it is edited by hand, so anyone can improve it.</p>" + contribBox();
     if (guide === null) h += "<p>Loading…</p>";
     else if (guideFailed) h += guideUnavailable();
-    else if (!guide.length) h += "<p>There are no guide pages yet. Be the first to write one.</p>";
+    else if (!listedGuide().length) h += "<p>There are no guide pages yet. Be the first to write one.</p>";
     else {
       var cats = guideCategories();
       Object.keys(cats).forEach(function (c) {
@@ -662,7 +664,7 @@
     return { title: "Game Guide", html: page("Game Guide", h) };
   };
   views.guidecat = function (c) {
-    var list = (guide || []).filter(function (p) { return p.category === c; });
+    var list = listedGuide().filter(function (p) { return p.category === c; });
     var h = guide === null ? "<p>Loading…</p>" : list.length ? categoryList(list) : "<p>No pages in this category.</p>";
     return { title: c, html: page(esc(c), h, { hat: GUIDE_HAT + " › " + esc(c) }), toc: false };
   };
@@ -677,7 +679,9 @@
         document.title = t + " – " + SHORT;
         setNav(["page:" + slug.toLowerCase(), "guide"]);
         document.querySelector("h1.title").textContent = t;
-        document.querySelector(".hat").innerHTML = GUIDE_HAT + ' › <a href="#/guide/category/' + enc(cat) + '">' + esc(cat) + "</a>";
+        var hat = document.querySelector(".hat");
+        if (entry && entry.unlisted) hat.remove();
+        else hat.innerHTML = GUIDE_HAT + ' › <a href="#/guide/category/' + enc(cat) + '">' + esc(cat) + "</a>";
         mdBase = (entry ? entry.slug : slug).indexOf("/") >= 0 ? (entry ? entry.slug : slug).replace(/[^/]*$/, "") : "";
         refs = newRefs(entry ? entry.slug : slug);
         var rendered = markdown(fm.body, t); mdBase = "";
@@ -692,7 +696,7 @@
   };
 
   views.home = function () {
-    var n = guide ? guide.length : 0;
+    var n = listedGuide().length;
     var h = '<p>Welcome to <b>UDFOP</b>, the <b>Unofficial Daggerfall Online Pages</b>: a fan-made, community-edited reference for Daggerfall Online. It has two parts.</p>';
     h += '<div class="portals two">';
     h += '<div class="portal"><h3>Game Guide</h3><div><p>How things work, written by players. ' + (n ? "<b>" + plural(n, "page") + "</b> so far." : "Be the first to add a page.") + '</p><p><a href="#/guide">Browse the Game Guide →</a><br><a href="#/guide/how-to-write-a-page">How to write a page</a></p></div></div>';
@@ -1039,7 +1043,7 @@
         return { kind: "Game system", title: arg, text: "Changes to the " + arg + " system.", meta: plural(sl.length, "change") };
       }
       if (arg.indexOf("category/") === 0) {
-        var cat = arg.slice(9), n = (guide || []).filter(function (g) { return g.category === cat; }).length;
+        var cat = arg.slice(9), n = listedGuide().filter(function (g) { return g.category === cat; }).length;
         return n ? { kind: "Game Guide category", title: cat, text: "", meta: plural(n, "page") } : null;
       }
       var g = guideBySlug[arg.toLowerCase()] || guideByTitle[arg.toLowerCase()];
