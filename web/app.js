@@ -355,6 +355,9 @@
 
   /* ---------- Game Guide: Markdown pages in web/guide/, listed by guide/index.json ---------- */
   var REPO = "https://github.com/tau-samsara/udfop";
+  /* the contributor instructions: the one place their address is written (the menu in index.html has it too). A moved page can keep its old address working by adding it to MOVED */
+  var HOWTO = "#/guide/how-to/how-to-write-a-page";
+  var MOVED = { "how-to-write-a-page": "how-to/how-to-write-a-page" };   /* old slug (lower case) -> new slug */
   var guide = null, guideFailed = false, guideBySlug = {}, guideByTitle = {};
   var topicByLower = {};
   topics.forEach(function (t) { topicByLower[t.toLowerCase()] = t; });
@@ -411,7 +414,7 @@
     .catch(function () {});
   function contribBox() {
     return '<div class="mbox"><b>Anyone can add or fix a page.</b> You need a free GitHub account and your own copy (a <b>fork</b>) of the project, which you make on the project\'s GitHub page first. ' +
-      '<a href="#/guide/how-to-write-a-page">Step-by-step: how to write a guide page</a>.</div>';
+      '<a href="' + HOWTO + '">Step-by-step: how to write a guide page</a>.</div>';
   }
 
   /* Markdown: headings, paragraphs, **bold**, *italic*, `code`, links, images, lists, tables, quotes, code blocks, [[wiki links]].
@@ -669,6 +672,7 @@
     return { title: c, html: page(esc(c), h, { hat: GUIDE_HAT + " › " + esc(c) }), toc: false };
   };
   views.guidepage = function (slug) {
+    if (MOVED[slug.toLowerCase()]) { location.replace("#/guide/" + MOVED[slug.toLowerCase()].split("/").map(enc).join("/")); return null; }
     var entry = guideBySlug[slug.toLowerCase()] || guideByTitle[slug.toLowerCase()];
     var title = entry ? entry.title : slug.split("/").pop();
     var slugPath = (entry ? entry.slug : slug).split("/").map(enc).join("/");
@@ -677,7 +681,7 @@
       fetch("guide/" + slugPath + ".md").then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); }).then(function (raw) {
         var fm = frontMatter(raw), t = fm.meta.title || title, cat = fm.meta.category || (entry && entry.category) || "General";
         document.title = t + " – " + SHORT;
-        setNav(["page:" + slug.toLowerCase(), "guide"]);
+        setNav(["page:" + (entry ? entry.slug : slug).toLowerCase(), "guide"]);   /* the page's real slug, not the title or odd capitals someone typed */
         document.querySelector("h1.title").textContent = t;
         var hat = document.querySelector(".hat");
         if (entry && entry.unlisted) hat.remove();
@@ -687,7 +691,7 @@
         var rendered = markdown(fm.body, t); mdBase = "";
         rendered += buildReferences(refs, (fm.meta.related || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean)); refs = null;
         box.innerHTML = rendered +
-          '<p class="editline"><a href="' + REPO + "/edit/main/web/guide/" + slugPath + '.md" rel="noopener">Edit this page</a> (fork the project first) · <a href="#/guide/how-to-write-a-page">How to contribute</a></p>';
+          '<p class="editline"><a href="' + REPO + "/edit/main/web/guide/" + slugPath + '.md" rel="noopener">Edit this page</a> (fork the project first) · <a href="' + HOWTO + '">How to contribute</a></p>';
         buildToc();
       }).catch(function () {
         box.innerHTML = guideFailed ? guideUnavailable() : '<div class="mbox">There is no guide page called “' + esc(title) + '” yet. <a href="' + newPageUrl(title) + '"' + newAttr(title) + ' rel="noopener">Create it</a>, or try the search box.</div>';
@@ -699,7 +703,7 @@
     var n = listedGuide().length;
     var h = '<p>Welcome to <b>UDFOP</b>, the <b>Unofficial Daggerfall Online Pages</b>: a fan-made, community-edited reference for Daggerfall Online. It has two parts.</p>';
     h += '<div class="portals two">';
-    h += '<div class="portal"><h3>Game Guide</h3><div><p>How things work, written by players. ' + (n ? "<b>" + plural(n, "page") + "</b> so far." : "Be the first to add a page.") + '</p><p><a href="#/guide">Browse the Game Guide →</a><br><a href="#/guide/how-to-write-a-page">How to write a page</a></p></div></div>';
+    h += '<div class="portal"><h3>Game Guide</h3><div><p>How things work, written by players. ' + (n ? "<b>" + plural(n, "page") + "</b> so far." : "Be the first to add a page.") + '</p><p><a href="#/guide">Browse the Game Guide →</a><br><a href="' + HOWTO + '">How to write a page</a></p></div></div>';
     h += '<div class="portal"><h3>Patch Notes</h3><div><p>Every recorded change, patch by patch: <b>' + rows.length.toLocaleString() + "</b> changes to <b>" + topics.length + "</b> topics. Latest: <b>" + vlink(versions[0]) + "</b> (" + esc(dateOf(versions[0])) + ').</p><p><a href="#/patchnotes">Browse the Patch Notes →</a><br><a href="#/recent">Recent changes</a></p></div></div>';
     h += "</div>";
     h += "<p>Patch notes are compiled from the developers' public release notes by a script, so they are updated for each release. Guide pages are written and corrected by the community. <a href=\"#/about\">About UDFOP</a></p>";
@@ -719,7 +723,7 @@
       '<div class="portal"><h3>Suggestion or feedback</h3><div><p>An idea, a request, or what you think of the site.</p><p><a class="btn" data-issue="feedback.yml" data-prefix="[Feedback] " href="' + issueUrl("feedback.yml", "[Feedback] ") + '" rel="noopener">Give feedback</a></p></div></div>' +
       "</div>";
     h += sec("Rather fix it yourself?", "Rather fix it yourself?", 2) +
-      '<p>Anyone can correct or add a Game Guide page: <a href="#/guide/how-to-write-a-page">how to write a guide page</a>. Please do not put personal details in a report, since it is public.</p>';
+      '<p>Anyone can correct or add a Game Guide page: <a href="' + HOWTO + '">how to write a guide page</a>. Please do not put personal details in a report, since it is public.</p>';
     return { title: "Feedback & Bugs", html: page("Feedback &amp; Bugs", h), toc: false };
   };
 
