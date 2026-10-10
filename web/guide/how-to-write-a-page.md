@@ -156,15 +156,19 @@ Rendered:
 
 ### Quotations
 
-Start a line with `>` for a quotation, which suits in-game text or developer statements. Say where it came from.
+Start a line with `>` for a quotation, which suits in-game text or developer statements. Always say who said it and where it came from, in a line under the quotation, and add a link when there is one. Put a `>` on the blank line between the two as well.
 
 ```md
 > Quotations are set off from the text.
+>
+> Who said it, and where it came from
 ```
 
 Rendered:
 
 > Quotations are set off from the text.
+>
+> Who said it, and where it came from
 
 A quotation whose first line is a tag such as `[!NOTE]` becomes a notice box instead. See **Notice boxes** under Extended features.
 
@@ -526,11 +530,18 @@ Raw HTML (it is shown as plain text, which keeps pages safe and consistent), str
 
 ## Good practice
 
-- Write what you know to be true and say where it comes from, such as testing in the game, a patch number or a developer post.
-- One subject per page. Link to other pages instead of repeating them.
-- The Patch Notes already record *what changed*. A guide page should say *how it works now*, and can link to the topic for the history, for example [[topic:Revenants]].
-- Use your own words.
-- Your writing is released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) and credited to "UDFOP contributors".
+- **Say how you know.** Write what you know to be true, and say where it comes from, such as testing in the game, a patch number or a developer post. Facts that can change, such as a default key or a number, are easier to trust when they say which game version you checked, so add the patch number when you know it.
+- **One subject per page.** Link to other pages instead of repeating them.
+- **Say how it works now.** The Patch Notes already record *what changed*. A guide page should explain *how it works now*, and can link to the topic for the history, for example [[topic:Revenants]].
+
+> [!IMPORTANT]
+> **Only submit what is yours, and credit what is not.**
+>
+> - Use your own words. Do not paste the developers' release text or copy other sites.
+> - A short quotation is fine when you set it off as a quotation and say who said it and where, such as a developer post with its link.
+> - Only upload pictures you made yourself. The other rules on what you may submit are under **Good practice** below.
+>
+> Your writing is released under a free licence, as explained under **Credit** below.
 
 ## Checking your page
 
