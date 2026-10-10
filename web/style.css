@@ -426,7 +426,7 @@ html:not([data-contents="sidebar"]) body.toc-open #side-toc:not([hidden]) { disp
 /* keys and buttons: {{W}}, {{Shift+Right click}}, {{Mouse 4}}, {{pad:RT}} */
 kbd.k { display: inline-block; min-width: 1.5em; padding: 0 .5em; margin: 0 1px; text-align: center; white-space: nowrap; line-height: 1.5;
   font: 600 .82em/1.5 ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace; color: var(--fg); background: var(--softer);
-  border: 1px solid var(--muted); border-bottom-width: 2px; border-radius: 4px; vertical-align: baseline; }   /* the edge uses the muted text color so it reads at 3:1 or better (the dark themes set their own below) */
+  border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; vertical-align: baseline; }
 kbd.k-mouse { border-radius: 10px; }
 kbd.k-pad { border-radius: 999px; border-color: var(--accent); }
 .kplus { margin: 0 2px; color: var(--muted); }
