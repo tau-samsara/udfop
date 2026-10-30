@@ -7843,3 +7843,137 @@
 {"id":"0.1.12621-003","source":"You can buy a house in the Imperial City. Go to the door of a house and push Buy it."}
 {"id":"0.1.12621-004","source":"The price of a house is set by the size of the house and the size of the city."}
 {"id":"0.1.12621-005","source":"The castle of the Imperial City is not for sale."}
+{"id":"0.1.12919-001","source":"In the open zone in Cyrodiil, in a duel and in a siege, a hit from a player now removes your own health. Your health bar shows it."}
+{"id":"0.1.12919-002","source":"Damage from a player is a part of your health. A strong character and a weak character take the same part from the same hit."}
+{"id":"0.1.12919-003","source":"You cannot heal for 30 seconds after a player hits you. You cannot heal during a duel or a siege. Health that you get from a potion or a spell in that time does not stay."}
+{"id":"0.1.12919-004","source":"Health that a player removes does not return by itself after 30 seconds."}
+{"id":"0.1.12919-005","source":"If you lose a duel, you have 1 health at the end. The duel does not heal you."}
+{"id":"0.1.12919-006","source":"In a siege, you return with full health at your wave."}
+{"id":"0.1.12919-007","source":"A death in the zone could remove the items from your pack and show no remains. Now the remains stay in the world after your death, where you fell."}
+{"id":"0.1.12919-008","source":"Your killer can put your remains on the ground after you go. These remains now show your name, not \"Traveller\". Your screen and the map show them as your remains. Your killer's screen does not show them as Your remains."}
+{"id":"0.1.12919-009","source":"If your game lost its link to the social service, a death in the zone did not take items from your pack. Your killer took them into your remains, but you kept them too. Now your pack loses the items that go into your remains."}
+{"id":"0.1.12919-010","source":"When you closed or reloaded the game online, your character did not save. Progress since the last automatic save was lost, and an item you equipped could go from its slot. The game now keeps that save, and you get it back when you join again."}
+{"id":"0.1.12919-011","source":"If the realm did not get your guild reputation from a session, the next device now keeps that reputation. Before, it was lost."}
+{"id":"0.1.12919-012","source":"If the realm does not get your guild reputation during a session, the game tells you."}
+{"id":"0.1.12919-013","source":"If the realm does not take a save for 5 minutes, the game tells you. It also tells you when the game cannot save, for example during a duel."}
+{"id":"0.1.12919-014","source":"When another device takes your online seat, the game saves your character immediately."}
+{"id":"0.1.12919-015","source":"You can recover progress that a device kept but the realm did not get. Use the character's tile at the Online door. The progress becomes a new offline character."}
+{"id":"0.1.12919-016","source":"When you change devices and leave the app open, the game no longer sets a save aside."}
+{"id":"0.1.12919-017","source":"A town's yards no longer fill up. Every home can put 60 decorations in its yard, also in a busy town."}
+{"id":"0.1.12919-018","source":"Yard decorations near you appear first. The game now gets only the changes near you, not the full town each minute."}
+{"id":"0.1.12919-019","source":"When a player changes a yard, other players near it see the change in a few seconds."}
+{"id":"0.1.12919-020","source":"The game asks for yard decorations less often when nothing changes nearby."}
+{"id":"0.1.12919-021","source":"The game now draws the decorations in other players' yards in groups. This gives a higher frame rate in large cities with many decorated homes."}
+{"id":"0.1.12919-022","source":"On October 25, items could go from a chest in your online home after you made a shared chest private again. They now come back into that chest when you next go into your home. The game tells you how many came back."}
+{"id":"0.1.12919-023","source":"A chest that you shared and then made private again no longer loses items that went from it before."}
+{"id":"0.1.12919-024","source":"An older version of the game shows no yard decorations of other players. Reload the page, or start the desktop app again, to update."}
+{"id":"0.1.12919-025","source":"A tutorial page or a message can open over a window. This is true for the spellbook, the inventory, the chronicle, the shop windows and the tavern. It is also true for a player trade, the pause menu, the character sheet and the level-up screen. Now the page or the message gets your Enter and Escape. Before, Escape closed the window under it, and Enter could push a button of that window. On the level-up screen, Enter confirmed your points."}
+{"id":"0.1.12919-026","source":"With Morrowind's data attached, the Face step of a new character said that the portraits \"could not be loaded\" while the game drew them. Now the note shows only when the game cannot draw a portrait. The game starts to draw the faces when you choose your name."}
+{"id":"0.1.12919-027","source":"The first launch after an update no longer freezes for half a minute while the game prepares its graphics. The work now runs in the background while the world loads."}
+{"id":"0.1.12919-028","source":"The first seconds of play no longer stop while effects such as weapon glows and foe warnings get ready."}
+{"id":"0.1.12919-029","source":"On a slower or busy computer, the volumetric clouds no longer stop the first launch. The sky shows its simpler clouds for those seconds, and the full clouds replace them when they are ready."}
+{"id":"0.1.12919-030","source":"The game now keeps some results from your first launch. These are the town ground, the ship models and pictures, the shipyard and lighthouse sites, and the map of Tamriel. On later launches, the pauses when you start in Daggerfall are shorter."}
+{"id":"0.1.12919-031","source":"The pictures of your character's body now load in the background. The game does not stop for them."}
+{"id":"0.1.12919-032","source":"The first launch is a little slower, because the game saves these results. They use approximately 9 MB of storage."}
+{"id":"0.1.12919-033","source":"The game now prepares the snow around you in the background. When you ride or fly fast over winter ground, the frame rate is more stable."}
+{"id":"0.1.12919-034","source":"Foes use a map of the trees, crates and other objects that they hide behind. This map now uses approximately one third of its old memory, and foes find their line of sight faster. The objects that stop sight and missiles do not change."}
+{"id":"0.1.12919-035","source":"The Windows desktop app has a new setting in Settings > Graphics > Display: Graphics backend, Direct3D 11 (the default) or Vulkan. The new setting starts to work the next time the app starts."}
+{"id":"0.1.12919-036","source":"On many graphics cards, Vulkan prepares the graphics of the game much faster. With Vulkan, the first launch after an update does not freeze for a long time. In play it is a little slower than Direct3D 11."}
+{"id":"0.1.12919-037","source":"Wait For Screen Refresh stays on while Vulkan is your choice. When it was off, the game froze when you changed the size of the window."}
+{"id":"0.1.12919-038","source":"If Vulkan cannot start on your graphics card, the app tells you and starts again on Direct3D 11. It tries Vulkan again after a graphics driver update, or after an app update that has a new graphics engine."}
+{"id":"0.1.12919-039","source":"The Windows desktop app now continues to load the world when you minimize its window or put another window over it. Before, the load stopped until you looked at the game again."}
+{"id":"0.1.12919-040","source":"The desktop app now keeps the compiled game scripts between launches, as a web browser does."}
+{"id":"0.1.12919-041","source":"You can pay in the currency of your country. When it can, Stripe shows the price in your currency."}
+{"id":"0.1.12919-042","source":"You can pay with more methods, for example iDEAL. Stripe shows the methods for your country."}
+{"id":"0.1.12919-043","source":"The prices in the shop are in US dollars. A credit card is not necessary."}
+{"id":"0.1.12923-001","source":"You can now buy a house in the Imperial City."}
+{"id":"0.1.12928-001","source":"You can now click a place past the Iliac Bay on the travel map. The map then opens the travel panel for that place. Click Begin journey to walk there on the overworld."}
+{"id":"0.1.12928-002","source":"This is a walk. It is not fast travel. You can also click open land past the Bay when Travel Options lets you travel to a spot. A click on the sea does not start a journey."}
+{"id":"0.1.12928-003","source":"You can buy a house in all of Cyrodiil, also in the open country."}
+{"id":"0.1.12928-004","source":"You can buy a house in a town on an isle of the Eltheric Ocean."}
+{"id":"0.1.12948-001","source":"The ground at the edge of a town in the Iliac Bay has no high cliffs, holes or pits now."}
+{"id":"0.1.12948-002","source":"A town near the sea goes down to the water on a slope. Piers and docks meet the shore."}
+{"id":"0.1.12948-003","source":"Crops in the fields of a town stand on the ground. They do not float above the sea."}
+{"id":"0.1.12948-004","source":"The walls of a city do not flicker near their towers and gates now. This includes the gate of Riften."}
+{"id":"0.1.12948-005","source":"The walls of the cities in the Iliac Bay have no doors in them now."}
+{"id":"0.1.12948-006","source":"The parts of a wall do not go through each other where the wall turns."}
+{"id":"0.1.12948-007","source":"Each road to a walled city in the Iliac Bay goes to a gate. A street that goes to the wall has a gate now."}
+{"id":"0.1.12948-008","source":"Most of these yards stay in the same location. A yard moves to a new location only if a road or a wall is on it now."}
+{"id":"0.1.12951-001","source":"In the Windows app with the Vulkan graphics backend, the world behind the Inventory was upside down."}
+{"id":"0.1.12951-002","source":"To correct this, the windows do not blur the world behind them on Vulkan. The windows keep their dark color."}
+{"id":"0.1.12955-001","source":"Each province past the Iliac Bay now has its own people. Most persons in Skyrim are Nords. Most persons in Morrowind are Dark Elves. Most persons in Cyrodiil are Imperials."}
+{"id":"0.1.12955-002","source":"Each province also has some persons from its neighbours. For example, Morrowind has Imperial soldiers and traders, and Valenwood has Khajiit."}
+{"id":"0.1.12955-003","source":"Some areas have a different people. Most persons in the Reach are Reachmen, who are of Breton blood. Reaper's March has many Khajiit. Gideon has many Imperials, and Leyawiin has many Argonians and Khajiit."}
+{"id":"0.1.12955-004","source":"Persons in the street, residents, keepers, port crews, guards and enemies all use these rules. Each person has a name from their own people."}
+{"id":"0.1.12955-005","source":"Inside buildings, more persons now show a body of the correct race. Before, many of them were Nords. This correction is also in the Iliac Bay."}
+{"id":"0.1.12955-006","source":"When an enemy kills you and comes back as a revenant, it now keeps its race."}
+{"id":"0.1.12955-007","source":"The crew of a ship now keeps its race. Before, their race changed with your location."}
+{"id":"0.1.12955-008","source":"In multiplayer, all players now see the same race for one enemy."}
+{"id":"0.1.12955-009","source":"A spouse now has the same race in the world and on the Family tab."}
+{"id":"0.1.12955-010","source":"Some persons past the Iliac Bay have a new name and race after this update. A courtship that you started keeps its name and race."}
+{"id":"0.1.12959-001","source":"Ships past the Iliac Bay now sail to their port. Before, some ships turned in circles near the coast and did not go into the port."}
+{"id":"0.1.12959-002","source":"Travel by ship from one port to a different port past the Bay no longer stops at the coast. Your ship now keeps to the water near a coast and in a narrow channel, for example on the Niben."}
+{"id":"0.1.12959-003","source":"Seven more towns on the coast past the Bay have a port: Farrun, Shornhelm, Blacklight, Tear, Thorn, Elden Root and Silinorin. Each port has a harbour and a shipyard. Ships sail between these ports and the ports near them."}
+{"id":"0.1.12967-001","source":"When you select a city past the Iliac Bay and push Begin journey, your character now goes to that city. Before, the game stopped the journey to some cities on the coast, for example Solitude. The game showed a message about the water."}
+{"id":"0.1.12967-002","source":"Your character now goes to the gate of a city, a dungeon or a quest location past the Iliac Bay. Before, your character went to the center of its map square."}
+{"id":"0.1.12967-003","source":"A waypoint on land past the Iliac Bay now shows Travel here. A waypoint on the water does not show it."}
+{"id":"0.1.12967-004","source":"When you select an item in Crafted, Goods or Auctions, the Market now shows its card. The card shows the picture, the tier, the stats and the magic of the item. The item that you buy is the same as the item on the card."}
+{"id":"0.1.12967-005","source":"A Soul Cake has no weight now. Soul Cakes do not add to your encumbrance."}
+{"id":"0.1.12989-001","source":"At a city gate in the Iliac Bay, the boards and the carriage stay at the gate that has a road."}
+{"id":"0.1.12989-002","source":"A yard near a tower of a city wall stays in its first location now."}
+{"id":"0.1.12989-003","source":"More yards in the Iliac Bay stay in their first location. This includes the stable of Knightsgate and the shipyards of Wayrest and Penwall Derry."}
+{"id":"0.1.12989-004","source":"Most yards in towns out of the Iliac Bay stay in their first location now."}
+{"id":"0.1.12989-005","source":"A camp, an anchor or a dropped item near a town in the Iliac Bay stays on the new ground."}
+{"id":"0.1.12999-001","source":"The ground at the edge of a town in the Iliac Bay has fewer steep slopes now."}
+{"id":"0.1.12999-002","source":"Next to a high hill, the ground at the edge of a town does not go down into a pit."}
+{"id":"0.1.13003-001","source":"After you logged in, the game stopped for 10 to 15 seconds on some computers. We repaired this problem."}
+{"id":"0.1.13003-002","source":"Before this change, the game prepared all of its effect shaders at the same time. Another shader then waited for all of them."}
+{"id":"0.1.13003-003","source":"Now the game prepares these shaders one at a time."}
+{"id":"0.1.13003-004","source":"The auras of other players can appear some seconds after the players appear."}
+{"id":"0.1.13008-001","source":"The game now finds a route for more long journeys past the Iliac Bay. Before, a journey from Daggerfall to the Imperial City stopped with the message \"There is no way there by land.\""}
+{"id":"0.1.13008-002","source":"The game no longer stops for many seconds when you begin a very long journey past the Iliac Bay."}
+{"id":"0.1.13029-001","source":"PILOT-ECHO + PILOT-ARM + BOSS-ONE + PILOT-BAR + SPELL-NUMBERS + DWARVEN-DRAGON + DRAGON-RIDE + CASUAL-LIFE: Play as boss fixed, one boss, its health bar, spell damage numbers, the Dwarven Dragon monster and its Admin ride, Casual characters online"}
+{"id":"0.1.13037-001","source":"The travel map now takes you to cities, towns, villages and other places in all provinces. It works as it does in the Iliac Bay."}
+{"id":"0.1.13037-002","source":"Carriage drivers now take you to towns in other provinces. The driver uses the same rules and the same fare as in the Iliac Bay."}
+{"id":"0.1.13037-003","source":"The Mages Guild teleport now also sends you to known places outside the Iliac Bay, for example farms and temples."}
+{"id":"0.1.13037-004","source":"You can now use Travel here on a waypoint on land outside the Iliac Bay."}
+{"id":"0.1.13037-005","source":"On curved roads past the Iliac Bay, the party now keeps its speed and a steady direction. It does not stop at each bend."}
+{"id":"0.1.13059-001","source":"The Aura Armory puts light and fire on the parts of your body. Your sprite does not change."}
+{"id":"0.1.13059-002","source":"There are five slots: Head, Torso, Arms, Legs and Weapon. You can put one piece in each slot, and any piece can go with any other piece. Your aura stays as it is."}
+{"id":"0.1.13059-003","source":"The Dagonfire pieces are at the Sigil Broker. Each piece costs 75 Deadlands Embers. You get embers when you help close Dagon's Breach."}
+{"id":"0.1.13059-004","source":"The Eternal pieces are in the shop, in a new Aura Armory section. Each piece costs $6. The Eternal Set gives you all five pieces for $20. The shop shows each piece and the set before you buy them. A weapon piece shows on a sword."}
+{"id":"0.1.13059-005","source":"Open your profile. In the Character section, select a slot, then select a piece. Select the piece again to remove it."}
+{"id":"0.1.13059-006","source":"At the Sigil Broker, select Wear on a Dagonfire piece. In the shop, select Wear on The Eternal Set to wear all five pieces."}
+{"id":"0.1.13059-007","source":"The Collections page has a new Aura Armory part. It shows all pieces, the pieces that you have, and how to get each piece."}
+{"id":"0.1.13059-008","source":"Your pieces are on your account, so all of your characters can wear them. Other players see a change immediately."}
+{"id":"0.1.13059-009","source":"The Crown of the Burning Door has a door of white fire at the front. The Ember Heart beats, and fire moves along its veins. The Ashbound Bracers are a chain of hot iron."}
+{"id":"0.1.13059-010","source":"The Eternal Sigil is a dragon of light that bites its tail. The Eternal Halo and the Eternal Armlets have runes on them. The Eternal Greaves have lines of light."}
+{"id":"0.1.13059-011","source":"A weapon piece shows on each weapon in your hands. When you hold two weapons, both weapons show it. An element on your weapon shows first."}
+{"id":"0.1.13059-012","source":"The pieces show on Morrowind bodies and on sprite bodies. Other players see your pieces on your Morrowind body as you move."}
+{"id":"0.1.13059-013","source":"Your profile has a new Character section. It shows your character with your aura, your Aura Armory pieces, and your title and glyphs above your head."}
+{"id":"0.1.13059-014","source":"The slots are on the two sides of your character: Head, Torso, Arms, Legs, Over the head, Weapon, Portrait and Aura. Select a slot to see its choices."}
+{"id":"0.1.13059-015","source":"Point to a choice to see it on your character. Select the choice to wear it."}
+{"id":"0.1.13059-016","source":"You can try on a piece that you do not have. The text below the choices tells you how to get the piece."}
+{"id":"0.1.13059-017","source":"When you pause the game in a Morrowind body, select Morrowind or Sprite to change the body that you see."}
+{"id":"0.1.13059-018","source":"Dagon's Fire has cracks of fire in the stone in its ring. Sparks go up from the flames, and the flames sometimes go higher."}
+{"id":"0.1.13059-019","source":"The Golden Radiance has two ribbons of light that turn around its column. A sun with twelve points is below your feet."}
+{"id":"0.1.13059-020","source":"The Maelstrom has light that moves on the bottom of the water. A thin ring of foam is around its center."}
+{"id":"0.1.13059-021","source":"Beaconlight sends a beam of light up from each beacon when the beacon lights."}
+{"id":"0.1.13059-022","source":"The Burning Stair has cracks of fire in its steps. Small flames come up from the edge of each step."}
+{"id":"0.1.13059-023","source":"Eternal has the mark of the Origin and a ring of fire below your feet."}
+{"id":"0.1.13059-024","source":"Witchfire has a star with seven points between its candles. Each candle has a flame."}
+{"id":"0.1.13059-025","source":"The Crystal Resonance has a small square above each column. The square stays at the top for a short time, then it falls. On each beat, a ring of squares moves out from your feet."}
+{"id":"0.1.13059-026","source":"The pieces on the arms and the legs now stay on the arms and the legs of all sprites."}
+{"id":"0.1.13059-027","source":"When a sprite holds a sword or a mace to the side, the pieces now stay on the body."}
+{"id":"0.1.13059-028","source":"On three sprites with a staff, a head piece was above the head. This problem is fixed."}
+{"id":"0.1.13059-029","source":"The names of other players are now above their head pieces."}
+{"id":"0.1.13059-030","source":"On the female Acrobat, cloak and wing auras now stay on the shoulders when you see her from an angle."}
+{"id":"0.1.13059-031","source":"On a phone, the account window now fills the screen."}
+{"id":"0.1.13059-032","source":"Others' Aura Armory is a new setting in Features. Select All, Near or None to show fewer pieces of other players. Your own pieces always show."}
+{"id":"0.1.13059-033","source":"An item with the Cast When Held enchantment now loses condition more slowly. It loses 1 point of condition each 3 minutes. Before, it lost 3 points each minute."}
+{"id":"0.1.13059-034","source":"Outside the open PvP zone, a weapon change takes half the time. In Cyrodiil, on the open sea and in their dungeons, the time does not change."}
+{"id":"0.1.13059-035","source":"In first person, you do not see the candle of your Light spell. The light stays. Other players and the third-person view still show the candle."}
+{"id":"0.1.13059-036","source":"The Hearth Offering at a door has a new picture. It is now a carved pumpkin on a stool, below a lantern."}
+{"id":"0.1.13063-001","source":"The account server does less work for each player. When many players are online, sign in and saves fail less."}
+{"id":"0.1.13063-002","source":"After midnight UTC, the Motherlodes can show some minutes late."}
+{"id":"0.1.13063-003","source":"The hunt record on the bounty board updates every ten minutes."}
