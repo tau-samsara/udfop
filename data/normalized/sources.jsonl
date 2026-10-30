@@ -8068,3 +8068,86 @@
 {"id":"0.1.13180-004","source":"The account server stopped for up to one minute at a time. Sign in, saves and homes were slow during these stops. This fix removes the cause."}
 {"id":"0.1.13180-005","source":"In the open PvP zone, the streets of a city, town or village are not a safe zone for a villain. A player who is not in the streets can attack a villain who is in the streets. When a villain is in the streets, two guards come to attack the villain. Then one more guard comes each 30 seconds, to a maximum of six. When the villain goes out of the streets, the guards go away."}
 {"id":"0.1.13180-006","source":"Each guard has the level of the villain. The guard also gets the best attack skill, the Critical Strike and the best defence skill of the villain. Guards are hard to kill. A guard gets only 5% of the damage from each hit."}
+{"id":"0.1.13231-001","source":"The world map has the title Tamriel when it shows all of Tamriel."}
+{"id":"0.1.13231-002","source":"On the map, the name of a place outside the Iliac Bay does not show \"(beyond the Bay)\" now."}
+{"id":"0.1.13231-003","source":"The map does not show a dungeon outside the Iliac Bay until you find it or a quest names it."}
+{"id":"0.1.13231-004","source":"The game now tells you about a raid outside the Iliac Bay."}
+{"id":"0.1.13231-005","source":"Camps, bounty farms and trail spots are not on the roads outside the Iliac Bay now."}
+{"id":"0.1.13231-006","source":"A rumour about a Hollow in a province now gives the correct place."}
+{"id":"0.1.13231-007","source":"In a Hollow outside the Iliac Bay, the game now keeps the death and the win of a party."}
+{"id":"0.1.13231-008","source":"Two dungeons outside the Iliac Bay do not share their resources now. Each dungeon has its own."}
+{"id":"0.1.13231-009","source":"In the open zone, a Recall, a guild teleport or a teleport to your party goes only into the streets of a town. Before, a Mark near the walls of a town sent you into the open country."}
+{"id":"0.1.13231-010","source":"When your PvP flag is off, a Portal Stone now takes you into and out of the open country of Cyrodiil. Before, the game used the stone and did not move you."}
+{"id":"0.1.13231-011","source":"In Cyrodiil, you do not get safe passage when you go out of a building now. You get safe passage only when you walk into the zone across its edge."}
+{"id":"0.1.13231-012","source":"In a party, a Hollow in a province does not replace the copy of the Hollow in the Iliac Bay that your party uses."}
+{"id":"0.1.13231-013","source":"A person or a yard figure near the border of a province now has the race of the land where it stands."}
+{"id":"0.1.13231-014","source":"In the Imperial City, a house has no yard now. Before, its yard went into other houses and into the street."}
+{"id":"0.1.13231-015","source":"If you put items near your Imperial City house before, stand at its door to remove them."}
+{"id":"0.1.13231-016","source":"When you join the world, a raid that players cleansed does not show as active now."}
+{"id":"0.1.13231-017","source":"This release moves the place of the Sea Serpent on each day one time. After this release, new sea lanes do not move it."}
+{"id":"0.1.13231-018","source":"Travel Options can now skip ahead on a journey outside the Iliac Bay."}
+{"id":"0.1.13231-019","source":"When Map Backgrounds is on, the background of the character sheet in a province now shows the town, the dungeon or the graveyard. Before, it showed the background of your race."}
+{"id":"0.1.13231-020","source":"The death screen does not name the Iliac Bay now."}
+{"id":"0.1.13231-021","source":"The Features panel tells you what is in the land outside the Iliac Bay. It also tells you that fast travel goes there when Land beyond the Bay is on. Online, fast travel does not go into or out of Cyrodiil."}
+{"id":"0.1.13231-022","source":"The message that asks you about level 30 now names the open Eltheric Ocean as a PvP zone. Before, it named all of the sea."}
+{"id":"0.1.13231-023","source":"The help page about the arena names the two arenas now."}
+{"id":"0.1.13231-024","source":"The Danish and Norwegian text for the raids setting is correct now."}
+{"id":"0.1.13231-025","source":"The help pages, the crew, the sea news and other lines do not name the Iliac Bay when you can be in any province."}
+{"id":"0.1.13237-001","source":"After an update, the game had to make its graphics again when you went into the world. In Chrome, this stopped the game for up to one minute. Now the game starts to make these graphics on the main menu. A bar at the bottom left of the main menu shows the progress. When the bar is full, it shows Graphics ready."}
+{"id":"0.1.13237-002","source":"You can start to play at all times. The bar does not stop you."}
+{"id":"0.1.13237-003","source":"The main menu in Chrome and Edge on Windows and Mac has a new Fix stutter button. It shows the steps to delete the old graphics files of the browser. The game cannot delete these files. The first load after you delete them is slower one time."}
+{"id":"0.1.13240-001","source":"You can insure all of your gear in the open PvP zone. This includes weapons, armor, shields, jewelry and clothing. Common items and old items are also included."}
+{"id":"0.1.13240-002","source":"The cost of a policy is 20% of the value of the item. If the item maker put enchantments on the item, the cost also includes the gold for these enchantments."}
+{"id":"0.1.13240-003","source":"To insure an item, open the card of the item outside the zone. Then select Insure."}
+{"id":"0.1.13248-001","source":"Your Aura Armory pieces now show on your character in the world."}
+{"id":"0.1.13248-002","source":"Your weapon piece now shows on your weapon."}
+{"id":"0.1.13248-003","source":"When you put on a piece, other players see it immediately."}
+{"id":"0.1.13248-004","source":"When you look at the back of a character, the Eternal cape and the Holo Shadow Cloak now cover the pieces under them."}
+{"id":"0.1.13248-005","source":"The Cloaks panel in your inventory has a new Show cape control."}
+{"id":"0.1.13248-006","source":"Select Show cape to hide your cloak and your aura. Select it again to show them."}
+{"id":"0.1.13248-007","source":"Other players also see your character without the cloak and the aura."}
+{"id":"0.1.13248-008","source":"Your cloak continues to protect you from the cold and the rain when you hide it."}
+{"id":"0.1.13252-001","source":"Some text in the game said that a PvP death drops your bag. This was not correct. A PvP death does not drop your bag. The player who kills you can take one uninsured worn item, or gold. The zone messages, the zone map, the tutorial and the insurance text now tell the correct rule. A villain keeps no insured gear."}
+{"id":"0.1.13261-001","source":"The travel map does not show a black line in the sea at the west edge of the Iliac Bay."}
+{"id":"0.1.13266-001","source":"In the Imperial City, most houses with a court behind them now have a yard. The yard is the part of the court behind the house."}
+{"id":"0.1.13266-002","source":"To put items in the yard, stand at the door of the house and use Decorate. The game then tells you where the yard is."}
+{"id":"0.1.13266-003","source":"A house with a street on two sides has no yard."}
+{"id":"0.1.13272-001","source":"At night, the light of a lit room goes through its window onto the street."}
+{"id":"0.1.13272-002","source":"The window frame and its bars make shadows in the light on the ground."}
+{"id":"0.1.13272-003","source":"A dark room gives no light. A curtain makes the light on the ground smaller."}
+{"id":"0.1.13272-004","source":"In a building, the sunlight and the moonlight go through the windows onto the floor and the furniture."}
+{"id":"0.1.13272-005","source":"This light moves with the time of day and changes with the weather."}
+{"id":"0.1.13272-006","source":"With Enhanced Lighting on, walls and furniture make shadows in the sunlight."}
+{"id":"0.1.13272-007","source":"By day, the rooms that you see through windows from the street also have sunlight on their floors."}
+{"id":"0.1.13272-008","source":"Twelve more types of house window are now see-through."}
+{"id":"0.1.13272-009","source":"You can see a room behind them from the street, and the street through them from inside."}
+{"id":"0.1.13272-010","source":"The window light uses the Real windows setting."}
+{"id":"0.1.13272-011","source":"When Real windows is Off, windows give no light."}
+{"id":"0.1.13288-001","source":"The two bridges in Alinor now connect to the street at their two ends. Each end has a ramp, and you can walk onto the bridge. Townspeople do not walk through the ends of the bridges."}
+{"id":"0.1.13288-002","source":"Some roads on the Iliac Bay go across the sea. These roads are now dry. Before this update, water covered these roads and you fell through them."}
+{"id":"0.1.13288-003","source":"The ground near Kalunnunu now rises to meet the town, so the docks are not below a cliff. Other high towns on the coast get the same change."}
+{"id":"0.1.13288-004","source":"A bounty at a graveyard now puts its monsters at the graveyard. You get a message when they are near. In a party, the bounty continues when a member goes into the crypt."}
+{"id":"0.1.13288-005","source":"A child of two married player characters now shows on the family trees of the two parents. The child stays a member of the house where it was born."}
+{"id":"0.1.13299-001","source":"Your ship makes way under sail after you go into a building and come out again. Before this fix, the wind sometimes stayed at zero."}
+{"id":"0.1.13299-002","source":"When the wind stayed at zero, every ship stopped under sail. The oars still worked."}
+{"id":"0.1.13299-003","source":"A parked wagon or a wagon at a stable does not add weight to your ship."}
+{"id":"0.1.13299-004","source":"Only a wagon that stays with you adds its load to the ship."}
+{"id":"0.1.13299-005","source":"When the load makes your ship slow, the helm panel shows Too heavy. Lighten your pack, your wagon or the hold."}
+{"id":"0.1.13299-006","source":"A passenger on a slow ship also sees this text."}
+{"id":"0.1.13299-007","source":"On the deck of a ship, you cannot mount your horse or your wagon."}
+{"id":"0.1.13299-008","source":"On the deck of a ship, Summon and Send away do not operate."}
+{"id":"0.1.13308-001","source":"A boat with too much cargo can stop its turn and its movement again. Before, it could turn or move without stop. When you turn the helm the other way, the turn also stops quickly."}
+{"id":"0.1.13308-002","source":"If you hold a key when you change to a different window, the game releases that key. This also applies to a controller."}
+{"id":"0.1.13308-003","source":"The Online page shows the families that have no character that is alive. Push Remove family to remove a family and make space for a new family. Your characters do not change."}
+{"id":"0.1.13308-004","source":"All characters on your account can put the Hearth Offering at the door of your house. The Hearth Offering has no weight."}
+{"id":"0.1.13308-005","source":"You can remove more of the furniture in houses of the town mods, for example in Alinor. Walls, beams and pillars stay in the room. The beds from the town mods point in the correct direction."}
+{"id":"0.1.13325-001","source":"The Iliac Bay has all of its world events on each game day, as before. Past the Bay, only two provinces start Oblivion Gates, town raids, fallen stars and Abyss Dungeons on each game day. Each province has this turn on one of each four game days. A game day now has three Oblivion Gates, not nine. The Sky-Ketch and the sea serpent do not change."}
+{"id":"0.1.13325-002","source":"At most two new Abyss Dungeons are open past the Bay at one time. An Abyss Dungeon that is open at the update stays open to its end."}
+{"id":"0.1.13325-003","source":"The Timers window shows the two provinces for this game day and for the next two game days."}
+{"id":"0.1.13325-004","source":"On the travel map, a place past the Bay shows when its gates, raids, stars and Abyss Dungeons start."}
+{"id":"0.1.13325-005","source":"The graphics bar now shows each time the main menu opens."}
+{"id":"0.1.13325-006","source":"When the graphics are ready, the bar is full and shows Graphics ready."}
+{"id":"0.1.13325-007","source":"Before this change, the bar did not show when the graphics were ready before the menu opened."}
+{"id":"0.1.13325-008","source":"You can turn on your PvP flag only in Cyrodiil, on the open sea and in their dungeons. Outside these zones, Caps Lock and the flag button do nothing. If you go out of a zone with your flag on, the flag goes off when your combat timer stops."}
+{"id":"0.1.13325-009","source":"The flag button is now at the middle of the right edge of the screen. When your flag is off, the button shows a dark skull."}
+{"id":"0.1.13325-010","source":"The villain bar is now at the top of the Standing page of the menu. It is always there. Outside the zone, it shows the last value that you saw."}
