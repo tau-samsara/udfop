@@ -7977,3 +7977,94 @@
 {"id":"0.1.13063-001","source":"The account server does less work for each player. When many players are online, sign in and saves fail less."}
 {"id":"0.1.13063-002","source":"After midnight UTC, the Motherlodes can show some minutes late."}
 {"id":"0.1.13063-003","source":"The hunt record on the bounty board updates every ten minutes."}
+{"id":"0.1.13081-001","source":"The new town lines show in your language when you do not play in English."}
+{"id":"0.1.13081-002","source":"When the account server is busy, it now sends town and display data from its extra copy. This data can be some seconds old, but it does not fail."}
+{"id":"0.1.13081-003","source":"A large city has more people in its houses and on its streets than a small town."}
+{"id":"0.1.13081-004","source":"Daggerfall city has 591 people now. At ten in the morning, about 90 people are near its main square."}
+{"id":"0.1.13081-005","source":"Each town sends more travellers on the roads: adventurers, pedlars, pilgrims, couriers and hunters."}
+{"id":"0.1.13081-006","source":"The new adventurers go into dungeons more often. They travel in companies of their own."}
+{"id":"0.1.13081-007","source":"Each day, the roads have more parties than before. More than three times as many adventurers go into dungeons."}
+{"id":"0.1.13081-008","source":"A person who stops in the street now looks to the side or moves their weight from one foot to the other. They do not walk in one position."}
+{"id":"0.1.13081-009","source":"A beggar, a labourer or a fisher who stands at their work shows their own body. They do not change into a still picture."}
+{"id":"0.1.13081-010","source":"People who talk in a group look at the person who speaks."}
+{"id":"0.1.13081-011","source":"The axe of a guard who stands is always visible."}
+{"id":"0.1.13081-012","source":"A cutpurse can take a purse from a person in a crowd. The cutpurse runs, and a guard who is near runs after them."}
+{"id":"0.1.13081-013","source":"The cutpurse does not come back to the person who had the purse. In a narrow street, the cutpurse runs a shorter distance."}
+{"id":"0.1.13081-014","source":"In the evening, two people can play dice. Sometimes two people become friendly with each other."}
+{"id":"0.1.13081-015","source":"A priest can speak to the people at the door of their temple. The priest speaks the name of the god of the temple."}
+{"id":"0.1.13081-016","source":"A courier can call out the news."}
+{"id":"0.1.13081-017","source":"Large towns have more guards on patrol. Daggerfall city has 48 guards."}
+{"id":"0.1.13081-018","source":"A guard on patrol can speak to a person in the street, buy food at a stall or tell a beggar to move."}
+{"id":"0.1.13081-019","source":"A guard says good morning only in the morning. A guard buys food only from a person who sells food."}
+{"id":"0.1.13081-020","source":"A guard tells a beggar to go only when the beggar leaves."}
+{"id":"0.1.13081-021","source":"Two guard patrols do not go to the same part of a town."}
+{"id":"0.1.13081-022","source":"Each people of Tamriel now has its own names."}
+{"id":"0.1.13081-023","source":"A Nord can have the name of a clan, such as Battle-Born. A Nord can also use the name of the father, with -sen, -son or -sdottir."}
+{"id":"0.1.13081-024","source":"An Orc has gro- or gra- before the name of a parent."}
+{"id":"0.1.13081-025","source":"An Argonian can have a name such as Hides-In-Mud."}
+{"id":"0.1.13081-026","source":"A Khajiit can have a title before the name, such as Ri'saad."}
+{"id":"0.1.13081-027","source":"A Redguard can have at- and the name of a parent, or al- and the name of a city."}
+{"id":"0.1.13081-028","source":"A Dark Elf of an old Great House can have the name of the house first."}
+{"id":"0.1.13081-029","source":"Each region has its own families. You hear the same family names again in that region."}
+{"id":"0.1.13081-030","source":"On the Iliac Bay, you also hear names from Daggerfall."}
+{"id":"0.1.13081-031","source":"The people of a quest that you started keep their names. Other people in a town can have a new name."}
+{"id":"0.1.13081-032","source":"The game now does less work at one time to prepare the news that travellers bring. This can decrease short pauses near towns."}
+{"id":"0.1.13081-033","source":"The game prepares the events of a town each day more quickly."}
+{"id":"0.1.13081-034","source":"When the account server is busy, more requests go to its extra copies. Sign in, saves and town data fail less when many players are online."}
+{"id":"0.1.13083-001","source":"AUDIT 68 S09: the equip countdown outlasts the settle at SWAP-PACE's drain"}
+{"id":"0.1.13087-001","source":"The game asks the account service less often when you walk through the world."}
+{"id":"0.1.13087-002","source":"The server stays faster when many players are online."}
+{"id":"0.1.13090-001","source":"Sign-in to a new area uses fewer server requests when the server is busy."}
+{"id":"0.1.13090-002","source":"The game waits longer before it asks a busy server again."}
+{"id":"0.1.13148-001","source":"A fight with a player now uses your real maximum health. The limit is 3,000 health."}
+{"id":"0.1.13148-002","source":"One hit or one spell from a player can remove at most 34% of your maximum health. Thus, a player must hit you at least three times to kill you."}
+{"id":"0.1.13148-003","source":"The old limit on damage in five seconds is removed. The weapon speed and the spell limit now control how fast damage comes."}
+{"id":"0.1.13148-004","source":"For 30 seconds after a player hits you, your heals have a limit. All heals together give at most 25% of your maximum health in 15 seconds."}
+{"id":"0.1.13148-005","source":"A high Restoration skill increases this limit to a maximum of 35%. Duels now let you heal, with the same limit."}
+{"id":"0.1.13148-006","source":"Your armour now decreases the damage from the hits of other players. Armour of a better material decreases more damage."}
+{"id":"0.1.13148-007","source":"Each kind of armour has different results against blades, blunt weapons and hands. Armour in bad condition gives less protection."}
+{"id":"0.1.13148-008","source":"Your resistances now decrease the damage from the spells of other players. A Resist spell on you decreases the damage from its element."}
+{"id":"0.1.13148-009","source":"Your race, your Willpower and the resistances of your gear now also decrease this damage. At most 85% of the damage of a spell is stopped. This limit is also true if you are immune."}
+{"id":"0.1.13148-010","source":"In a fight with a player, each class now has a small advantage against one other class. Archers have an advantage against mages. Mages have an advantage against warriors. Warriors have an advantage against archers."}
+{"id":"0.1.13148-011","source":"Your arrows now cause more damage to players. Your spells now cause a little less damage to players. These changes are larger at level 40 and higher."}
+{"id":"0.1.13148-012","source":"A Shield spell on you now decreases the damage from the hits of other players. It stops 25% of the damage from a weapon and 35% of the damage from an arrow."}
+{"id":"0.1.13148-013","source":"When a fight with a player can start, a spell that you cast on yourself lasts 1 minute at most. The effects of your items do not change."}
+{"id":"0.1.13148-014","source":"In a fight with a player, you can drink one potion of each kind in 15 seconds. The kinds are health, magicka and other. A potion that you drink in a fight gives only its first effect."}
+{"id":"0.1.13148-015","source":"In a fight with a player, each plate piece that you wear increases the magicka cost of your spells by 6%. Each plate piece also makes your casts 3% slower. A chain piece has half of this effect. Leather has no effect. Full plate increases the cost by 42% and makes your casts 21% slower."}
+{"id":"0.1.13148-016","source":"A spell that you cast at a player uses only its first effect. Your spells can now have a critical hit on a player, as your weapon hits can. Your Critical Strike skill and your Luck set the chance and the size. Only a Damage effect or a heal can have an effect on a player. Drain spells do not have an effect on players for now. Spells of the poison element do not have an effect on players."}
+{"id":"0.1.13148-017","source":"Your weapon skill and the damage bonus of your gear now increase the damage of your hits on players."}
+{"id":"0.1.13148-018","source":"The PvP zones are Cyrodiil and the open sea. In a PvP zone, press Caps Lock or click the button at the top right to put your PvP flag on or off. You can put your flag on at level 30 or higher. When you do not have your flag, your attacks and spells do not hit players. Thus you can fight monsters near other players safely. When you have your flag, you can attack all players."}
+{"id":"0.1.13148-019","source":"After a hit in a PvP fight, you cannot remove your flag for one minute. When you do not have your flag, you can use a Portal Stone anywhere in the zone."}
+{"id":"0.1.13148-020","source":"A skull shows above the name of a player who has a PvP flag. The skull is white. After a hit in a PvP fight, the skull is gold for one minute. A villain has a red skull. The flag button at the top right shows your skull. The skull also shows on the Overworld view."}
+{"id":"0.1.13148-021","source":"Below level 30, you cannot attack players and players cannot attack you. At level 30, other players can attack and kill you in a PvP zone. This is also true when you do not have your flag."}
+{"id":"0.1.13148-022","source":"Before you go from level 29 to level 30, the game asks you. Click Yes to go to level 30. Click Not yet to stay at level 29. You keep the level, and you can go to level 30 later."}
+{"id":"0.1.13148-023","source":"When you die in a PvP zone, you go to a town. When you return after a death, you do not get safe passage."}
+{"id":"0.1.13148-024","source":"You get safe passage only when you walk into a PvP zone across its edge. You do not get safe passage when you teleport into the zone. You also do not get it when you go out of a town or a dungeon in the zone. In a town, players cannot attack you."}
+{"id":"0.1.13148-025","source":"A flagged player in a PvP zone now has a red health bar below the skull. A thin blue line on the bar shows a Shield spell. A player that is not flagged has no bar."}
+{"id":"0.1.13148-026","source":"A hidden player in a PvP fight is now not fully hidden. You see a faint body, the skull and the health bar. You do not see the name."}
+{"id":"0.1.13148-027","source":"The names of other players show only when you look near them. A name, its skull and its bars come into view slowly and go out of view slowly. This rule is the same in all areas of the world."}
+{"id":"0.1.13148-028","source":"The names of your party always show. The name of a player that you hit, or that hit you, in the last minute also shows."}
+{"id":"0.1.13148-029","source":"When your PvP flag is up in Cyrodiil or on the open sea, Levitate stops and you cannot cast it. You fall, but the fall does not cause damage. Your buffs stop when the flag goes up. You cannot cast a buff on yourself. You can cast Shield. The buffs from your items also stop until the flag goes down."}
+{"id":"0.1.13148-030","source":"You cannot rest or wait when the flag is up. You cannot ride a horse or a cart. Your run speed and your jump have a limit. The limit is the best value that a character can have without magic. Paralyze does not hit a player."}
+{"id":"0.1.13148-031","source":"When you kill a player in a PvP zone, you get one item that they wear. The game selects the item at random. It does not select an insured item. Your victim does not drop the items in their bag."}
+{"id":"0.1.13148-032","source":"If all the items that they wear are insured, you get the gold of one policy. Your victim keeps the item, and the policy ends. If the gold is too heavy for you, you get a letter of credit."}
+{"id":"0.1.13148-033","source":"When you kill a player in a PvP zone, your villain meter can increase. A kill of a player 5 or more levels below you adds to it. A kill of a player with no PvP flag adds more. If that player attacked you or your party first, the kill adds nothing. At 5,000 you are a villain. You have a red skull, and your PvP flag stays on."}
+{"id":"0.1.13148-034","source":"The Stats page of the pause menu shows your Villainy bar. The bar goes to 10,000, and a red mark shows 5,000."}
+{"id":"0.1.13148-035","source":"The villain meter stays with your character when you log out or go to a different area. When you kill a monster at your level or higher, the meter goes down by 1. When you complete a quest, it goes down by 200. When you complete a raid, it goes down by 500. A villain does not get this decrease from a raid."}
+{"id":"0.1.13148-036","source":"When a villain is killed by a player, the insurance of the villain does not keep an item."}
+{"id":"0.1.13148-037","source":"When your PvP flag is on in a PvP zone, keys 3 to 0 show a PvP spell bar. Keys 1 and 2 are for potions. With the flag on, you can cast only the spells on this bar. Each spell costs a part of your maximum magicka."}
+{"id":"0.1.13148-038","source":"The bar has Damage, Heal, Shield, Resist, Reflect, Absorb, Fortify, Cure, Jump and Speed. Damage is an area spell, and you select its element. To change a slot, release the mouse and click the slot. You can select the spell, its element or attribute, and its icon. A Heal or a buff goes to the party member at your crosshair up to 15 m away. If there is no party member, it goes to you."}
+{"id":"0.1.13148-039","source":"When a new version of the game is available, a line in chat and a banner tell you. After one minute, the game saves your character. Then a screen shows and the game loads the new version. If you are dead or in a duel, the game waits until that stops. It waits for two minutes at most. Click Reload Now to load the new version immediately."}
+{"id":"0.1.13148-040","source":"A player who is not in a party goes into a shared Shattered Hour. A shared Hour now holds 40 players. Before, it held 8 players."}
+{"id":"0.1.13151-001","source":"DETOUR-RETRY: a stuck foe stops casting ~550 rays every step"}
+{"id":"0.1.13164-001","source":"When you die online, you can rise after 15 seconds. Push Enter to rise. If you do not rise, you rise after one minute. This gives a party member time to bring you back with Resurrect. This rule is the same in the PvP zone and out of it. In the PvP zone, the wait was two minutes."}
+{"id":"0.1.13164-002","source":"When a player kills you in the PvP zone, you do not lose gold or letters of credit. The killer gets one worn item that has no insurance. If all your worn items have insurance, the killer gets the gold of one policy. If you have no worn item and no insurance, the killer gets one tenth of your coin and letters of credit. Your coin pays first. The killer gets this gold as coin, or as one letter of credit if the coin is too heavy."}
+{"id":"0.1.13164-003","source":"The PvP bar has a new spell, Resurrect. Put it in a slot to bring back a fallen party member. It costs 25% of your maximum magicka. Look at the body of the party member and cast it. The body must be near you. It does not bring back a player who is not in your party."}
+{"id":"0.1.13164-004","source":"FRAME-ALLOC: one eye array for the world frame's passes"}
+{"id":"0.1.13166-001","source":"MOVER-RESTAND: a lift stands its bucket again without dropping the broad filing"}
+{"id":"0.1.13180-001","source":"The game stopped for some seconds after you entered the world after an update. The water and rain graphics now prepare in the background, so the game does not stop for them."}
+{"id":"0.1.13180-002","source":"The desktop app now removes its old graphics cache after each update. This prevents a slow start."}
+{"id":"0.1.13180-003","source":"In the open PvP zone, you can attack a villain from the streets of a city, town or village. A villain cannot attack you while you stand in the streets. Other players cannot attack you there. The town guards do not come when you attack a villain from the streets."}
+{"id":"0.1.13180-004","source":"The account server stopped for up to one minute at a time. Sign in, saves and homes were slow during these stops. This fix removes the cause."}
+{"id":"0.1.13180-005","source":"In the open PvP zone, the streets of a city, town or village are not a safe zone for a villain. A player who is not in the streets can attack a villain who is in the streets. When a villain is in the streets, two guards come to attack the villain. Then one more guard comes each 30 seconds, to a maximum of six. When the villain goes out of the streets, the guards go away."}
+{"id":"0.1.13180-006","source":"Each guard has the level of the villain. The guard also gets the best attack skill, the Critical Strike and the best defence skill of the villain. Guards are hard to kill. A guard gets only 5% of the damage from each hit."}
