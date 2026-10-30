@@ -1,9 +1,12 @@
 ---
-title: Footnote Demo
+title: Demo: Footnotes
 category: Site Guide
 summary: A demo of footnotes: numbering by first use, repeated references, formatted notes, long notes, and references inside lists, tables and quotes.
 authors: tau
 ---
+
+> [!TIP]
+> To see the Markdown this page is written in, open its **View Source** tab at the top of the page.
 
 This page shows footnotes at work. A reference is written `[^name]` after the words it supports, and its note is a line of its own anywhere on the page. The notes are listed at the end under Footnotes.
 

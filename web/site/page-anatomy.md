@@ -38,6 +38,8 @@ From the top of the page down. The numbers match the picture.
 
 Under the title there is also a row of tabs, added by the site to every Game Guide and Site Guide page (they are not in the picture). **Article** on the left is always selected. On the right, **Read** is the page itself and **View Source** shows the page's Markdown file, read-only, drawn like the editor, with a notice that says how to change it. The panel is sized so that it and the site footer under it fit the window together, and the source scrolls inside it. The View Source tab has its own address (the page's address with `?view=source` after it), so it can be linked to. It has no Contents list or section folds, and none of the contribute lines that follow a page on the Read tab.
 
+The [[site:Demo: Front matter]] page shows each line of the front matter at work, and [[site:Demo: Unlisted page]] shows a page kept out of the lists.
+
 ## On a narrow screen
 
 ![A guide page on a phone, with its sections folded closed](images/anatomy-narrow.png "The same page on a phone: 1 the main menu button, 2 the search box, 3 the Settings gear, 4 the title, 5 the folded sections."){right 240}

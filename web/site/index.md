@@ -14,12 +14,17 @@ The Site Guide is the help section of UDOP. It explains how to write, fix and re
 
 - [[site:How to write a guide page]] – A step-by-step walkthrough for adding a page to the Game Guide or fixing one, from your first fork to seeing it live.
 - [[site:How to use the editor]] – Write, preview and check a page in the browser, then send it to GitHub, without using GitHub's own editor.
+- [[site:UDOP Extended Markdown]] – A short course in UDOP Extended Markdown, the Markdown a guide page is written in, with a lesson for each part.
 - [[site:Formatting reference]] – The plain Markdown a guide page can use, with the syntax to type and how it looks.
 - [[site:Extended formatting]] – The site's own extras: links between pages, the References section, picture captions, notice boxes, infoboxes, spoilers and keycaps.
 - [[site:Adding to the glossary]] – How the Glossary is built from one guide page, how to add or change a term, and how to link a term from another page.
 - [[site:Anatomy of a page]] – What each part of a guide page is, which part of your file makes it, and what the site adds on its own.
 - [[site:Fixing a page]] – Fixes for the most common problems when writing a page, and what each page-check message means.
 - [[site:Reviewing a pull request]] – What to check when someone sends a guide page, how to give kind feedback, and how to merge it.
+
+## Examples
+
+- [[site:Demo: Index]] – One demo page for each feature of a wiki page, each showing the syntax and how it looks.
 
 ## Other places
 

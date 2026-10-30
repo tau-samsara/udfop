@@ -64,6 +64,8 @@ From another guide page, link a term so a reader can see its definition:
 > [!NOTE]
 > `[[Glossary#Renown]]` is the safer form, because the editor's Problems list and the page check report a term that is not in the glossary. The first form is not checked.
 
+The [[site:Demo: Glossary links]] page shows the forms at work.
+
 ## When something looks wrong
 
 - **A term is missing from the Glossary.** Its heading must have exactly three hashes and a space (`### Term`), and it needs at least one line of definition under it.
